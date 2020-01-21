@@ -8,6 +8,14 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final controllerExpand = ExpandableController();
+  @override
+  void initState() {
+    controllerExpand.expanded = true;
+    super.initState();
+    
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,6 +24,7 @@ class _HomePageState extends State<HomePage> {
       ),
       body: SingleChildScrollView(
         child: ExpandablePanel(
+          controller: controllerExpand,
           header: Container(
             margin: const EdgeInsets.all(8),
             height: 50,
